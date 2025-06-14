@@ -1,8 +1,18 @@
-# 💼 Para Recrutadores
+# 👋 Olá, Recrutadores!
 
-Este repositório reúne projetos, testes e estudos que venho desenvolvendo para aprimorar minhas habilidades, com foco principal em **Back-End** e **lógica de programação**. Ocasionalmente, também exploro **Front-End** para manter a prática e entender o fluxo completo do desenvolvimento web.
+Bem-vindos ao meu GitHub! Este repositório foi criado especialmente para facilitar o acesso às minhas informações mais relevantes como desenvolvedor. Aqui você encontra:
 
+- 👨‍💻 Quem sou eu
+- 🚀 Principais projetos
+- 🛠️ Tecnologias que domino
+- 📫 Como entrar em contato
 ---
+
+Olá! Meu nome é Jonas Tillmann Junior, sou desenvolvedor de software e atualmente curso Análise e Desenvolvimento de Sistemas.
+
+Atualmente, trabalho na área de suporte técnico em uma empresa de automação, com foco em banco de dados de aplicações e no desenvolvimento de soluções para sistemas legados.
+
+Tenho grande interesse pela área de Back-End, onde busco me aprimorar constantemente — tanto profissionalmente quanto pessoalmente. Tenho perfil de liderança, gosto de colaborar com as pessoas e ajudar cada uma a alcançar seus objetivos. Acredito que com dedicação e criatividade é possível entregar um excelente trabalho com os recursos disponíveis.
 
 # 📂 Estrutura do Repositório
 
