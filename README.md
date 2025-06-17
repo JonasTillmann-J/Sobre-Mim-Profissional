@@ -16,11 +16,11 @@ Tenho grande interesse pela área de Back-End, onde busco me aprimorar constante
 
 # 📂 Estrutura do Repositório
 
-### `WEB/`
-Contém projetos e componentes relacionados ao desenvolvimento web, incluindo partes de front-end e outros elementos organizados de forma intuitiva para facilitar a compreensão.
-
 ### `LOGICA/`
 Reúne desafios e exercícios de lógica de programação. São estudos e testes que me ajudam a evoluir como desenvolvedor back-end e a reforçar fundamentos essenciais.
+
+### `WEB/`
+Contém projetos e componentes relacionados ao desenvolvimento web, incluindo partes de front-end e outros elementos organizados de forma intuitiva para facilitar a compreensão.
 
 ### `FRONTEND/`
 Projetos e experimentos focados apenas na interface do usuário (UI). Inclui pequenos sites ou páginas criadas para praticar HTML, CSS e JavaScript.
