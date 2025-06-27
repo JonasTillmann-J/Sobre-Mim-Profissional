@@ -4,9 +4,10 @@ public class Main {
         //Declarações Globais
         Scanner sc = new Scanner(System.in);
         Classe_Jogo cj = new Classe_Jogo();
-        //boolean runningGameStatus;
-        cj.painelGameInit();
-        cj.MapGame();
+        boolean runningGameStatus = false;
+        do {
+            runningGameStatus = cj.painelGameInit(sc, runningGameStatus);
+        } while (runningGameStatus);
               
         sc.close();
     }
