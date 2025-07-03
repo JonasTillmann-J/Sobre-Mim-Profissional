@@ -7,8 +7,12 @@ public class Main {
         boolean runningGameStatus = false;
         do {
             runningGameStatus = cj.painelGameInit(sc, runningGameStatus);
-            cj.MapGame();
-            cj.GetLocalMap(sc);
+            if (runningGameStatus) {
+                do {
+                    cj.MapGame();
+                    cj.GetLocalMap(sc);
+                } while (runningGameStatus);
+            }
         } while (runningGameStatus);
         sc.close();
     }
