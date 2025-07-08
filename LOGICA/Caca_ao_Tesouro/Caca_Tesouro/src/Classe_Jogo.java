@@ -2,12 +2,11 @@ import java.util.Scanner;
 import java.util.Random;
 public class Classe_Jogo {
     //declarações da classe
-    private int contadorPGI = 1;
-    private int contadorGLM;
-    private int horizontal;
-    private int vertical;
+    private int contadorPGI = 1, posicaoHorizontal, posicaoVertical, horizontal, vertical, pontuacao = 0;
+    private boolean horizontalCheckStatus = false, verticalCheckStatus = false;
     private char[][] matriz = new char[9][9];
     private char[][] ShadowMatriz = new char[9][9];
+    private Random random = new Random();
     
     //painel do jogo
     public boolean painelGameInit(Scanner sc, Boolean runningGameStatus){
@@ -48,8 +47,7 @@ public class Classe_Jogo {
         return runningGameStatus = response == 's' || response == 'S' ? true : false;
         }
     }
-    //renderiza o mapa e informa ele ao jogador
-    public void MapGame(){
+    public void InitGame(){
         // Inicialização da Matriz com o caracter "~" que representa a areia
         for (int i = 1; i < this.matriz.length; i++) {
             for (int j = 1; j < this.matriz.length; j++) {
@@ -58,21 +56,16 @@ public class Classe_Jogo {
         }
         // fazendo uma sombra do mapa que guarda a posição dos tesouros
         // e armadilhas e sem nada
-        for (int i = 1; i < this.ShadowMatriz.length; i++) {
-            for (int j = 1; j < this.ShadowMatriz.length; j++) {
-                ShadowMatriz[i][j] = '~';
-            }
-        }
-        for (int k = 0; k <+ 8; k++) {
+        for (int k = 0; k < 8; k++) {
             //| T tesouro | A armadilha | O Nada |
             //declarando a classe Random
-            Random random = new Random();
-            int posicaoHorizontal, posicaoVertical;
             //Usando a Classe Ramdon para gerar valores para a localização
             while (true) {
             //gera as pocicoes
                 posicaoHorizontal = random.nextInt(8) + 1;
                 posicaoVertical = random.nextInt(8) + 1;
+                System.out.println(posicaoHorizontal);
+                System.out.println(posicaoVertical);
                 //verifica se está fazia se estiver ele adiciona o valor e vai para a proxima localizacao
                 //se tiver algo ele gera os numeros novamente até achar algo vazio
                 if (ShadowMatriz[posicaoHorizontal][posicaoVertical] != 'T' && ShadowMatriz[posicaoHorizontal][posicaoVertical] != 'A') {
@@ -81,48 +74,70 @@ public class Classe_Jogo {
                 }
             }  
         }
-        for (int k = 0; k < 5; k++) {
-             //| T tesouro | A armadilha | O Nada |
-            //declarando a classe Random
-            Random random = new Random();
-            int posicaoHorizontal, posicaoVertical;
-            //Usando a Classe Ramdon para gerar valores para a localização
-            while (true) {
-                //gera as pocicoes
+        for (int i = 0; i < 5; i++) {
+             while (true) {
+            //gera as pocicoes
                 posicaoHorizontal = random.nextInt(8) + 1;
                 posicaoVertical = random.nextInt(8) + 1;
-                //verifica se está fazia se estiver ele adiciona o valor e vai para a proxima localizaca
+                System.out.println(posicaoHorizontal);
+                System.out.println(posicaoVertical);
+                //verifica se está fazia se estiver ele adiciona o valor e vai para a proxima localizacao
                 //se tiver algo ele gera os numeros novamente até achar algo vazio
                 if (ShadowMatriz[posicaoHorizontal][posicaoVertical] != 'T' && ShadowMatriz[posicaoHorizontal][posicaoVertical] != 'A') {
                     ShadowMatriz[posicaoHorizontal][posicaoVertical] = 'A';
                     break;
                 }
-            }
+            }  
         }
-        int contadorV = 0;
-        System.out.println("\n    1  2  3  4  5  6  7  8");
-        for (int i = 1; i < this.matriz.length; i++) {
-            System.out.println("");
-            for (int j = 1; j < this.matriz.length; j++) {
-                contadorV++;
+    }
+    //renderiza o mapa e informa ele ao jogador
+    public void MapGame(boolean onlyMap){
+        if (onlyMap) {
+            int contadorV = 0;
+            System.out.println("\n    1  2  3  4  5  6  7  8");
+            for (int i = 1; i < this.matriz.length; i++) {
+                System.out.println("");
+                for (int j = 1; j < this.matriz.length; j++) {
+                    contadorV++;
                     if (contadorV == 1) {
-                    System.out.print(""+(i)+"|  "+ShadowMatriz[i][j]+"  ");
-                } else {
-                    System.out.print(ShadowMatriz[i][j]+"  ");
+                        System.out.print(""+(i)+" | "+matriz[i][j]+"  ");
+                    }else {
+                        System.out.print(matriz[i][j]+"  ");
+                    }
+                }
+             contadorV = 0;
+            }
+        }else{
+            int contadorV = 0;
+            System.out.println("\n    1  2  3  4  5  6  7  8");
+            for (int i = 1; i < this.matriz.length; i++) {
+                System.out.println("");
+                for (int j = 1; j < this.matriz.length; j++) {
+                    contadorV++;
+                    if (contadorV == 1) {
+                    System.out.print(""+(i)+" | "+matriz[i][j]+"  ");
+                }else{
+                    System.out.print(matriz[i][j]+"  ");
                 }
             }
-             contadorV = 0;
+            contadorV = 0;
+            }
+            System.out.println("");
+            if(ShadowMatriz[horizontal][vertical] == 'T'){
+                matriz[horizontal][vertical] = 'T';
+                System.out.println("\nParabens, Você Achou um tesouro:");
+                
+            }else if(ShadowMatriz[horizontal][vertical] == 'A'){
+                matriz[horizontal][vertical] = 'A';
+                System.out.println("\nDroga uma Armadilha:");
+                
+            }else{
+                matriz[horizontal][vertical] = 'O';
+                System.out.println("\nNão achei nada, Vamos continuar:");
+            }
         }
-        System.out.println("");
     }
-    boolean horizontalCheckStatus = false;
-    boolean verticalCheckStatus = false;
     public void GetLocalMap(Scanner sc){
-        if (contadorGLM > 1){
-
-        }else
-        System.out.println("\nInforme o local que deseja cavar no mapa usando as cordenadas que aparecem no topo e na lateral do mapa exemplo (1,1)");
-
         System.out.println("Informe a Coordenada Horizontal");
         this.horizontal = sc.nextInt();
         do{
@@ -152,7 +167,5 @@ public class Classe_Jogo {
                 this.verticalCheckStatus = true;
             }
         }while (verticalCheckStatus);
-
-       // System.out.println("Coordenadas Informadas("+this.horizontal+"|"+this.vertical+")");
     }
 }
