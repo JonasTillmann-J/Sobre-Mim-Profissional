@@ -110,7 +110,15 @@ public class Classe_Jogo {
         }else{
             int contadorV = 0;
             System.out.println("\n    1  2  3  4  5  6  7  8");
+            if(ShadowMatriz[horizontal][vertical] == 'T'){
+                matriz[horizontal][vertical] = 'T';                
+            }else if(ShadowMatriz[horizontal][vertical] == 'A'){
+                matriz[horizontal][vertical] = 'A';                
+            }else{
+                matriz[horizontal][vertical] = 'O';
+            }
             for (int i = 1; i < this.matriz.length; i++) {
+
                 System.out.println("");
                 for (int j = 1; j < this.matriz.length; j++) {
                     contadorV++;
@@ -122,23 +130,25 @@ public class Classe_Jogo {
             }
             contadorV = 0;
             }
-            System.out.println("");
             if(ShadowMatriz[horizontal][vertical] == 'T'){
-                matriz[horizontal][vertical] = 'T';
-                System.out.println("\nParabens, Você Achou um tesouro:");
+                System.out.println("\n\nParabens, Você Achou um tesouro:");
+                pontuacao += 10;
+                System.out.println("pontuação: "+pontuacao);
                 
             }else if(ShadowMatriz[horizontal][vertical] == 'A'){
-                matriz[horizontal][vertical] = 'A';
                 System.out.println("\nDroga uma Armadilha:");
+                pontuacao += 10;
+                System.out.println("pontuação: "+pontuacao);
                 
             }else{
-                matriz[horizontal][vertical] = 'O';
                 System.out.println("\nNão achei nada, Vamos continuar:");
+                System.out.println("pontuação: "+pontuacao);
             }
+            System.out.println("");
         }
     }
     public void GetLocalMap(Scanner sc){
-        System.out.println("Informe a Coordenada Horizontal");
+        System.out.println("\nInforme a Coordenada Horizontal");
         this.horizontal = sc.nextInt();
         do{
             if (this.horizontal < 1) {
@@ -152,6 +162,7 @@ public class Classe_Jogo {
             }else{
                 this.horizontalCheckStatus = false;
                 System.out.println("Informe a coordenada Vertical");
+            
             }
         }while (horizontalCheckStatus);
 
