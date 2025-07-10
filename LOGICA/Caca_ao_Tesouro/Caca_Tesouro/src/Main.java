@@ -13,12 +13,14 @@ public class Main {
                 cj.MapGame(true);
                 do {
                     if (contador > 0) {
-                        cj.GetLocalMap(sc);
+                        cj.getCoodHorizontal(sc);
+                        cj.getCoodVertical(sc);
                         cj.MapGame(false);
                         contador++;
                     }else{
                         System.out.println("\nInforme as Localizações no mapa seguindo suas referencias\nExemplo 1 , 1");
-                        cj.GetLocalMap(sc);
+                        cj.getCoodHorizontal(sc);
+                        cj.getCoodVertical(sc);
                         cj.MapGame(false);
                         contador++;
                     }
