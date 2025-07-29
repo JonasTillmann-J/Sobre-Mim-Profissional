@@ -18,6 +18,10 @@ Tenho grande interesse pela área de Back-End, onde busco me aprimorar constante
 
 ### `LOGICA/`
 Reúne desafios e exercícios de lógica de programação. São estudos e testes que me ajudam a evoluir como desenvolvedor back-end e a reforçar fundamentos essenciais.
+    ## Projetos realizados
+        # LOGICA - Caça ao Tesouro - 
+                                    Um jogo de caça ao tesouro simples feito em Java usando classe e Objetos, feito como um desafio e para treinar a logica, não está completo, está arquivado para revisão
+        
 
 ### `WEB/`
 Contém projetos e componentes relacionados ao desenvolvimento web, incluindo partes de front-end e outros elementos organizados de forma intuitiva para facilitar a compreensão.
